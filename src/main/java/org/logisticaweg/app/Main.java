@@ -8,6 +8,7 @@ import org.logisticaweg.view.MensagensSistema;
 import org.logisticaweg.view.MenuOpcoes;
 
 import java.sql.Connection;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String [] args) {
@@ -28,12 +29,14 @@ public class Main {
 
         try {
 
-            MenuOpcoes menuView = new MenuOpcoes();
-            InteracaoUsuario interacaoView = new InteracaoUsuario();
+            Scanner input = new Scanner(System.in);
+            MenuOpcoes menuView = new MenuOpcoes(input);
+            InteracaoUsuario interacaoView = new InteracaoUsuario(input);
             MensagensSistema mensagensView = new MensagensSistema();
             LogisticaService service = new LogisticaService();
             LogisticaController control = new LogisticaController(menuView, interacaoView, mensagensView, service);
             control.iniciar();
+            input.close();
 
         } catch (Exception e) {
 

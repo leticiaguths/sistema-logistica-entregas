@@ -3,9 +3,13 @@ package org.logisticaweg.view;
 import java.util.Scanner;
 
 public class MenuOpcoes {
+    private Scanner input;
+
+    public MenuOpcoes(Scanner input) {
+        this.input = input;
+    }
 
     public int menuPrincipal(int opcaoMenu) {
-        Scanner input = new Scanner(System.in);
 
         System.out.print("\n\u001B[35m-------------------------- Sistema de Entregas WEG --------------------------\u001B[0m\n" +
                 "\n1. Cadastrar cliente\n" +
@@ -32,7 +36,7 @@ public class MenuOpcoes {
         try {
             opcaoMenu = Integer.parseInt(escolha);
         } catch (NumberFormatException e){
-            System.out.println("\n\u001B[31mOpção inválida! Digite apenas números de 1 a 6.\u001B[0m\n");
+            System.out.println("\n\u001B[31mOpção inválida! Digite apenas números de 0 a 16.\u001B[0m\n");
         }
 
         return opcaoMenu;

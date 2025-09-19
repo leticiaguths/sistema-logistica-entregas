@@ -44,4 +44,10 @@ public class InteracaoUsuario {
         return new String[]{nome, cnh, veiculo, cidade_base};
     }
 
+    public String excluirCliente() {
+        System.out.println("Digite o nome do cliente que deseja excluir: ");
+        String cliente = input.nextLine();
+
+        return cliente;
+    }
 }

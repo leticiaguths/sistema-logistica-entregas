@@ -1,5 +1,6 @@
 package org.logisticaweg.controller;
 
+import org.logisticaweg.model.Cliente;
 import org.logisticaweg.service.LogisticaService;
 import org.logisticaweg.view.InteracaoUsuario;
 import org.logisticaweg.view.MensagensSistema;
@@ -115,7 +116,13 @@ public class LogisticaController {
 
                 //15 - Excluir Cliente (com verificação de dependência)
                 case 15 -> {
-                    service.excluirCliente();
+                    String cliente = interacaoView.excluirCliente();
+
+                    /*for (Cliente c : cliente) {
+
+                    }*/
+
+                    service.excluirCliente(cliente);
                     break;
                 }
 

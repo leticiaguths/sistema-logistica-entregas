@@ -55,7 +55,7 @@ public class LogisticaService {
     public void excluirEntrega() {
     }
 
-    public void excluirCliente() {
+    public void excluirCliente(String cliente) {
     }
 
     public void excluirMotorista() {
